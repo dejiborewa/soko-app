@@ -64,7 +64,7 @@ const ImageWrapper = () => {
   );
 };
 
-function HeadingWrapper() {
+const HeadingWrapper = () => {
   return (
     <Heading>
       {categories.map((category) => {
