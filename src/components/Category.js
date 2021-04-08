@@ -64,7 +64,7 @@ const ImageWrapper = () => {
   );
 };
 
-const HeadingWrapper = () => {
+function HeadingWrapper() {
   return (
     <Heading>
       {categories.map((category) => {
@@ -72,7 +72,7 @@ const HeadingWrapper = () => {
       })}
     </Heading>
   );
-};
+}
 
 export default function Category() {
   return (
