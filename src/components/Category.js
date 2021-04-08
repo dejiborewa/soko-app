@@ -16,7 +16,7 @@ const Label = styled.h4`
 
 const Slider = styled.div`
   display: flex;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const Images = styled.img`
@@ -28,7 +28,7 @@ const Images = styled.img`
 
 const Heading = styled.div`
   display: flex;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const Head = styled.h4`
