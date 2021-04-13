@@ -7,20 +7,24 @@ import image4 from "./assets/category/4.jpg";
 import image5 from "./assets/category/5.jpg";
 import image6 from "./assets/category/6.jpg";
 
+export const Label = styled.h4`
+  font-weight: 300;
+  color: var(--color-text);
+`;
+
+export const Container = styled.div`
+  display: flex;
+`;
+
 const CategoryWrapper = styled.div`
   width: 100%;
 `;
 
-const Label = styled.h4`
-  font-weight: 300;
-`;
-
-const Slider = styled.div`
-  display: flex;
+const Slider = styled(Container)`
   overflow: auto;
 `;
 
-const Images = styled.div`
+export const Images = styled.div`
   min-width: 7em;
   min-height: 7em;
   border-radius: 5px;
@@ -32,13 +36,13 @@ const Images = styled.div`
     position: absolute;
     bottom: 0;
     margin: 0;
-    padding: 0 .7em .5em;
+    padding: 0 0.7em 0.5em;
     color: white;
   }
 `;
 
 const SliderIndicator = styled.div`
-  margin-top: 0.7em;
+  margin-top: 1em;
   display: flex;
   justify-content: center;
 `;
@@ -58,13 +62,28 @@ const SlideRight = styled(SlideLeft)`
   margin-left: 0.5em;
 `;
 
-const categories = [
-  { image: image1, text: "Beauty & Health" },
-  { image: image2, text: "Women's Shoes" },
-  { image: image3, text: "Men's Shoes" },
-  { image: image4, text: "Women's Accessories" },
-  { image: image5, text: "Men's Accessories" },
-  { image: image6, text: "Bags" },
+export const categories = [
+  { image: image1, name: "Nivea", price: "UGX 7500", text: "Beauty & Health" },
+  {
+    image: image2,
+    name: "Versace heels",
+    price: "UGX 4000",
+    text: "Women's Shoes",
+  },
+  { image: image3, name: "Steepers", price: "UGX 140000", text: "Men's Shoes" },
+  {
+    image: image4,
+    name: "Bangles",
+    price: "UGX 150000",
+    text: "Women's Accessories",
+  },
+  {
+    image: image5,
+    name: "Hublot watch",
+    price: "UGX 10000",
+    text: "Men's Accessories",
+  },
+  { image: image6, name: "Dior", price: "UGX 10000", text: "Bags" },
 ];
 
 const categories_updated = [
@@ -75,7 +94,7 @@ const categories_updated = [
 
 const ImageWrapper = () => {
   return (
-    <CategoryWrapper>
+    <CategoryWrapper id="category-wrapper">
       <Label>TOP CATEGORY</Label>
       <Slider>
         {categories.map((category, index) => {
@@ -140,7 +159,6 @@ export default function Category() {
     document.getElementById("slideRight").classList.remove("active");
     document.getElementById("slideLeft").classList.add("active");
   };
-
 
   if (isLeft === true) {
     return (

@@ -12,10 +12,13 @@ code {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 :root {
   --color-grey: #cccccc;
   --color-active: #2766cc;
+  --color-links: #2666cc;
+  --color-btn: #2666cc;
+  --color-text: #827e7e;
 }
