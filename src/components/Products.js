@@ -54,7 +54,7 @@ const Products = () => {
       <>
         {categories.map((category, index) => {
           return (
-            <Content>
+            <Content key={index}>
               <div>
                 <div
                   style={{
@@ -64,7 +64,6 @@ const Products = () => {
                   }}
                 >
                   <Images
-                    key={index}
                     style={{
                       backgroundImage: `linear-gradient(transparent, rgba(0,0,0,.3)), url(${category.image})`,
                     }}

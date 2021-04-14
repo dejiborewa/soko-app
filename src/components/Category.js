@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import image1 from "./assets/category/1.jpg";
 import image2 from "./assets/category/2.jpg";
@@ -55,6 +55,7 @@ const SlideLeft = styled.div`
 
   &.active {
     background: var(--color-active);
+    transition: background 1s ease-out;
   }
 `;
 
@@ -93,10 +94,26 @@ const categories_updated = [
 ];
 
 const ImageWrapper = () => {
+  useEffect(() => {
+    const slider = document.getElementById("slide");
+    slider.addEventListener("scroll", (e) => {
+      const leftOffset = e.currentTarget.scrollLeft;
+      console.log(leftOffset);
+      const deviceWidth =
+        document.documentElement.clientWidth || window.innerWidth;
+      if (leftOffset > deviceWidth / 2) {
+        document.getElementById("slideLeft").classList.remove("active");
+        document.getElementById("slideRight").classList.add("active");
+      } else if (leftOffset < deviceWidth / 2) {
+        document.getElementById("slideLeft").classList.add("active");
+        document.getElementById("slideRight").classList.remove("active");
+      }
+    });
+  });
   return (
     <CategoryWrapper id="category-wrapper">
       <Label>TOP CATEGORY</Label>
-      <Slider>
+      <Slider id="slide">
         {categories.map((category, index) => {
           return (
             <Images
