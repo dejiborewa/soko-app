@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Label, Images, categories } from "./Category";
 
-const Link = styled.a`
+export const Link = styled.a`
   text-decoration: none;
   color: var(--color-links);
   font-weight: bold;

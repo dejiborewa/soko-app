@@ -14,6 +14,9 @@ export const Label = styled.h4`
 
 export const Container = styled.div`
   display: flex;
+  margin-left: ${(props) => (props.account ? "3em" : "0px")};
+  align-items: ${(props) => (props.account ? "center" : "")};
+  align-items: ${(props) => (props.bag ? "center" : "")};
 `;
 
 const CategoryWrapper = styled.div`
